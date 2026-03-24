@@ -31,7 +31,7 @@ const HomePage = async () => {
           <AnimationContainer className="w-full flex flex-col items-center justify-center">
             <div className="w-full max-w-5xl px-6 py-10 md:px-12 md:py-14 space-y-6">
               <h1 className="text-foreground text-center text-6xl font-bold tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl !leading-[1.1] w-full font-heading uppercase">
-                <span className="text-transparent bg-gradient-to-r from-brand-red to-brand-red-dark bg-clip-text">
+                <span className="text-transparent bg-gradient-to-r from-brand-red-dark to-brand-red-light bg-clip-text drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] [filter:drop-shadow(0_10px_20px_rgba(0,0,0,0.8))_drop-shadow(0_-1px_1px_rgba(255,255,255,0.2))]">
                   KATALYST
                 </span>
               </h1>
