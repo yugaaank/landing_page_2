@@ -19,6 +19,8 @@ import MobileNavbar from "./mobile-navbar";
 import AnimationContainer from "../global/animation-container";
 import { Icons } from "../global/icons";
 
+import { SITE_CONFIG } from "@/lib/data";
+
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
 
@@ -47,72 +49,22 @@ const Navbar = () => {
       <AnimationContainer reverse delay={0.1} className="size-full">
         <MaxWidthWrapper className="flex items-center justify-between">
           <div className="flex items-center space-x-12">
-            <Link href="/#home" className="flex items-center gap-x-2">
+            <Link href="/" className="flex items-center gap-x-2">
               <Icons.logo className="w-6 h-6" />
-              <h1 className="text-lg font-medium">faria</h1>
+              <h1 className="text-lg font-medium">{SITE_CONFIG.name}</h1>
             </Link>
 
             <NavigationMenu className="hidden lg:flex">
               <NavigationMenuList>
                 {NAV_LINKS.map((link) => (
                   <NavigationMenuItem key={link.title}>
-                    {link.menu ? (
-                      <>
-                        <NavigationMenuTrigger>
-                          {link.title}
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <ul
-                            className={cn(
-                              "grid gap-1 p-4 md:w-[400px] lg:w-[500px] rounded-xl",
-                              link.title === "Features"
-                                ? "lg:grid-cols-[.75fr_1fr]"
-                                : "lg:grid-cols-2"
-                            )}
-                          >
-                            {link.title === "Features" && (
-                              <li className="row-span-4 pr-2 relative rounded-lg overflow-hidden">
-                                <div className="absolute inset-0 !z-10 h-full w-[calc(100%-10px)] bg-[linear-gradient(to_right,rgb(38,38,38,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgb(38,38,38,0.5)_1px,transparent_1px)] bg-[size:1rem_1rem]"></div>
-                                <NavigationMenuLink
-                                  asChild
-                                  className="z-20 relative"
-                                >
-                                  <Link
-                                    href="/"
-                                    className="flex h-full w-full select-none flex-col justify-end rounded-lg bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
-                                  >
-                                    <h6 className="mb-2 mt-4 text-lg font-medium">
-                                      All Features
-                                    </h6>
-                                    <p className="text-sm leading-tight text-muted-foreground">
-                                      Manage links, track performance, and more.
-                                    </p>
-                                  </Link>
-                                </NavigationMenuLink>
-                              </li>
-                            )}
-                            {link.menu.map((menuItem) => (
-                              <ListItem
-                                key={menuItem.title}
-                                title={menuItem.title}
-                                href={menuItem.href}
-                                icon={menuItem.icon}
-                              >
-                                {menuItem.tagline}
-                              </ListItem>
-                            ))}
-                          </ul>
-                        </NavigationMenuContent>
-                      </>
-                    ) : (
-                      <Link href={link.href} legacyBehavior passHref>
-                        <NavigationMenuLink
-                          className={navigationMenuTriggerStyle()}
-                        >
-                          {link.title}
-                        </NavigationMenuLink>
-                      </Link>
-                    )}
+                    <Link href={link.href} legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        {link.title}
+                      </NavigationMenuLink>
+                    </Link>
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>
@@ -122,17 +74,10 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center">
             <div className="flex items-center gap-x-4">
               <Link
-                href="/auth/sign-in"
-                className={buttonVariants({ size: "sm", variant: "ghost" })}
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/auth/sign-up"
+                href="/contact"
                 className={buttonVariants({ size: "sm" })}
               >
-                Get Started
-                <ZapIcon className="size-3.5 ml-1.5 text-orange-500 fill-orange-500" />
+                Book a Call
               </Link>
             </div>
           </div>

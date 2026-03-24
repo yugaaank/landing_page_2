@@ -44,62 +44,25 @@ const MobileNavbar = () => {
           </SheetClose>
           <div className="flex flex-col items-start w-full py-2 mt-10">
             <div className="flex items-center justify-evenly w-full space-x-2">
-              <>
                 <Link
-                  href="/auth/sign-in"
-                  className={buttonVariants({
-                    variant: "outline",
-                    className: "w-full",
-                  })}
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/auth/sign-up"
+                  href="/contact"
                   className={buttonVariants({ className: "w-full" })}
+                  onClick={handleClose}
                 >
-                  Sign Up
+                  Book a Call
                 </Link>
-              </>
             </div>
             <ul className="flex flex-col items-start w-full mt-6">
-              <Accordion type="single" collapsible className="!w-full">
                 {NAV_LINKS.map((link) => (
-                  <AccordionItem
-                    key={link.title}
-                    value={link.title}
-                    className="last:border-none"
-                  >
-                    {link.menu ? (
-                      <>
-                        <AccordionTrigger>{link.title}</AccordionTrigger>
-                        <AccordionContent>
-                          <ul onClick={handleClose} className={cn("w-full")}>
-                            {link.menu.map((menuItem) => (
-                              <ListItem
-                                key={menuItem.title}
-                                title={menuItem.title}
-                                href={menuItem.href}
-                                icon={menuItem.icon}
-                              >
-                                {menuItem.tagline}
-                              </ListItem>
-                            ))}
-                          </ul>
-                        </AccordionContent>
-                      </>
-                    ) : (
-                      <Link
+                    <Link
+                        key={link.title}
                         href={link.href}
                         onClick={handleClose}
-                        className="flex items-center w-full py-4 font-medium text-muted-foreground hover:text-foreground"
-                      >
+                        className="flex items-center w-full py-4 font-medium text-muted-foreground hover:text-foreground border-b border-border last:border-none"
+                    >
                         <span>{link.title}</span>
-                      </Link>
-                    )}
-                  </AccordionItem>
+                    </Link>
                 ))}
-              </Accordion>
             </ul>
           </div>
         </SheetContent>

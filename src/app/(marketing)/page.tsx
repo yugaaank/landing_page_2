@@ -1,9 +1,8 @@
 import {
   AnimationContainer,
   MaxWidthWrapper,
-  PricingCards,
 } from "@/components";
-import { BentoCard, BentoGrid, CARDS } from "@/components/ui/bento-grid";
+import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,9 +16,8 @@ import {
 import { LampContainer } from "@/components/ui/lamp";
 import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
-import { COMPANIES, PROCESS } from "@/utils";
-import { REVIEWS } from "@/utils/constants/misc";
-import { ArrowRightIcon, CreditCardIcon, StarIcon } from "lucide-react";
+import { SERVICES, PROCESS, COMPANIES, REVIEWS, SITE_CONFIG } from "@/lib/data";
+import { ArrowRightIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,28 +35,29 @@ const HomePage = async () => {
               <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-900" />
               <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/20"></span>
               <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
-                ✨ A top-notch template designed for success
+                ✨ Your Growth Starts Here
                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
               </span>
             </button>
             <h1 className="text-foreground text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
-              Premium{" "}
+              {SITE_CONFIG.title.split(" ").slice(0, 2).join(" ")}{" "}
               <span className="text-transparent mx-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
-                saas
+                {SITE_CONFIG.title.split(" ").slice(2, 4).join(" ")}
               </span>
-              template to kickstart your project
+              {" "}
+              {SITE_CONFIG.title.split(" ").slice(4).join(" ")}
             </h1>
             <p className="mb-12 text-lg tracking-tight text-muted-foreground md:text-xl text-balance">
-              Effortlessly streamline your link management with Faria.
+              {SITE_CONFIG.description}
               <br className="hidden md:block" />
               <span className="hidden md:block">
-                Shorten, track, and organize all your links in one place.
+                Automate the work that slows your growth.
               </span>
             </p>
             <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
               <Button asChild>
-                <Link href={"/auth/sign-in"} className="flex items-center">
-                  Start creating for free
+                <Link href={"/contact"} className="flex items-center">
+                  Book a Strategy Call
                   <ArrowRightIcon className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
@@ -72,7 +71,22 @@ const HomePage = async () => {
             <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
             <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
               <BorderBeam size={250} duration={12} delay={9} />
-              <div className="w-full h-[400px] bg-black"></div>
+              <div className="w-full h-[400px] bg-black flex items-center justify-center">
+                <div className="grid grid-cols-3 gap-8 text-center">
+                    <div>
+                        <p className="text-4xl md:text-6xl font-bold text-foreground">500+</p>
+                        <p className="text-sm text-muted-foreground uppercase">Automations Made</p>
+                    </div>
+                    <div>
+                        <p className="text-4xl md:text-6xl font-bold text-foreground">10k+</p>
+                        <p className="text-sm text-muted-foreground uppercase">Hours Saved</p>
+                    </div>
+                    <div>
+                        <p className="text-4xl md:text-6xl font-bold text-foreground">1M+</p>
+                        <p className="text-sm text-muted-foreground uppercase">Views Generated</p>
+                    </div>
+                </div>
+              </div>
               <div className="absolute -bottom-4 inset-x-0 w-full h-1/2 bg-gradient-to-t from-background z-40"></div>
               <div className="absolute bottom-0 md:-bottom-8 inset-x-0 w-full h-1/4 bg-gradient-to-t from-background z-50"></div>
             </div>
@@ -86,20 +100,21 @@ const HomePage = async () => {
           <div className="py-14">
             <div className="mx-auto px-4 md:px-8">
               <h2 className="text-center text-sm font-medium font-heading text-neutral-400 uppercase">
-                Trusted by the best in the industry
+                Our Advanced Tech Stack
               </h2>
               <div className="mt-8">
                 <ul className="flex flex-wrap items-center gap-x-6 gap-y-6 md:gap-x-16 justify-center">
                   {COMPANIES.map((company) => (
-                    <li key={company.name}>
+                    <li key={company.name} className="flex flex-col items-center">
                       <Image
                         src={company.logo}
                         alt={company.name}
                         width={80}
                         height={80}
                         quality={100}
-                        className="w-28 h-auto"
+                        className="w-28 h-auto opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
                       />
+                      <span className="mt-2 text-xs font-medium text-neutral-500">{company.name}</span>
                     </li>
                   ))}
                 </ul>
@@ -109,24 +124,23 @@ const HomePage = async () => {
         </AnimationContainer>
       </MaxWidthWrapper>
 
-      {/* Features Section */}
+      {/* Services Section */}
       <MaxWidthWrapper className="pt-10">
         <AnimationContainer delay={0.1}>
           <div className="flex flex-col w-full items-center lg:items-center justify-center py-8">
-            <MagicBadge title="Features" />
+            <MagicBadge title="Services" />
             <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              Manage Links Like a Pro
+              Marketing Infrastructure & AI Automation
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Faria is a powerful link management tool that helps you shorten,
-              track, and organize all your links in one place.
+              We build internal systems for scale, replacing manual tasks with high-performance AI agents.
             </p>
           </div>
         </AnimationContainer>
         <AnimationContainer delay={0.2}>
           <BentoGrid className="py-8">
-            {CARDS.map((feature, idx) => (
-              <BentoCard key={idx} {...feature} />
+            {SERVICES.map((feature, idx) => (
+              <BentoCard key={idx} {...feature} background={<div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />} />
             ))}
           </BentoGrid>
         </AnimationContainer>
@@ -136,13 +150,12 @@ const HomePage = async () => {
       <MaxWidthWrapper className="py-10">
         <AnimationContainer delay={0.1}>
           <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
-            <MagicBadge title="The Process" />
+            <MagicBadge title="Our Method" />
             <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              Effortless link management in 3 steps
+              System Architecture in 3 Steps
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Follow these simple steps to optimize, organize, and share your
-              links with ease.
+              A bespoke approach to building internal systems that scale without increasing headcount.
             </p>
           </div>
         </AnimationContainer>
@@ -173,130 +186,45 @@ const HomePage = async () => {
         </div>
       </MaxWidthWrapper>
 
-      {/* Pricing Section */}
-      <MaxWidthWrapper className="py-10">
-        <AnimationContainer delay={0.1}>
-          <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
-            <MagicBadge title="Simple Pricing" />
-            <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              Choose a plan that works for you
-            </h2>
-            <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Get started with Faria today and enjoy more features with our pro
-              plans.
-            </p>
-          </div>
-        </AnimationContainer>
-        <AnimationContainer delay={0.2}>
-          <PricingCards />
-        </AnimationContainer>
-        <AnimationContainer delay={0.3}>
-          <div className="flex flex-wrap items-start md:items-center justify-center lg:justify-evenly gap-6 mt-12 max-w-5xl mx-auto w-full">
-            <div className="flex items-center gap-2">
-              <CreditCardIcon className="w-5 h-5 text-foreground" />
-              <span className="text-muted-foreground">
-                No credit card required
-              </span>
-            </div>
-          </div>
-        </AnimationContainer>
-      </MaxWidthWrapper>
-
       {/* Reviews Section */}
       <MaxWidthWrapper className="py-10">
         <AnimationContainer delay={0.1}>
           <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
-            <MagicBadge title="Our Customers" />
+            <MagicBadge title="Success Stories" />
             <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-              What our users are saying
+              Measurable results for our clients
             </h2>
             <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-              Here&apos;s what some of our users have to say about Faria.
+              Hear how Katalyst is transforming businesses through intelligent automation.
             </p>
           </div>
         </AnimationContainer>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-start gap-4 md:gap-8 py-10">
-          <div className="flex flex-col items-start h-min gap-6">
-            {REVIEWS.slice(0, 3).map((review, index) => (
-              <AnimationContainer delay={0.2 * index} key={index}>
-                <MagicCard key={index} className="md:p-0">
-                  <Card className="flex flex-col w-full border-none h-min">
-                    <CardHeader className="space-y-0">
-                      <CardTitle className="text-lg font-medium text-muted-foreground">
-                        {review.name}
-                      </CardTitle>
-                      <CardDescription>{review.username}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4 pb-4">
-                      <p className="text-muted-foreground">{review.review}</p>
-                    </CardContent>
-                    <CardFooter className="w-full space-x-1 mt-auto">
-                      {Array.from({ length: review.rating }, (_, i) => (
-                        <StarIcon
-                          key={i}
-                          className="w-4 h-4 fill-yellow-500 text-yellow-500"
-                        />
-                      ))}
-                    </CardFooter>
-                  </Card>
-                </MagicCard>
-              </AnimationContainer>
-            ))}
-          </div>
-          <div className="flex flex-col items-start h-min gap-6">
-            {REVIEWS.slice(3, 6).map((review, index) => (
-              <AnimationContainer delay={0.2 * index} key={index}>
-                <MagicCard key={index} className="md:p-0">
-                  <Card className="flex flex-col w-full border-none h-min">
-                    <CardHeader className="space-y-0">
-                      <CardTitle className="text-lg font-medium text-muted-foreground">
-                        {review.name}
-                      </CardTitle>
-                      <CardDescription>{review.username}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4 pb-4">
-                      <p className="text-muted-foreground">{review.review}</p>
-                    </CardContent>
-                    <CardFooter className="w-full space-x-1 mt-auto">
-                      {Array.from({ length: review.rating }, (_, i) => (
-                        <StarIcon
-                          key={i}
-                          className="w-4 h-4 fill-yellow-500 text-yellow-500"
-                        />
-                      ))}
-                    </CardFooter>
-                  </Card>
-                </MagicCard>
-              </AnimationContainer>
-            ))}
-          </div>
-          <div className="flex flex-col items-start h-min gap-6">
-            {REVIEWS.slice(6, 9).map((review, index) => (
-              <AnimationContainer delay={0.2 * index} key={index}>
-                <MagicCard key={index} className="md:p-0">
-                  <Card className="flex flex-col w-full border-none h-min">
-                    <CardHeader className="space-y-0">
-                      <CardTitle className="text-lg font-medium text-muted-foreground">
-                        {review.name}
-                      </CardTitle>
-                      <CardDescription>{review.username}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4 pb-4">
-                      <p className="text-muted-foreground">{review.review}</p>
-                    </CardContent>
-                    <CardFooter className="w-full space-x-1 mt-auto">
-                      {Array.from({ length: review.rating }, (_, i) => (
-                        <StarIcon
-                          key={i}
-                          className="w-4 h-4 fill-yellow-500 text-yellow-500"
-                        />
-                      ))}
-                    </CardFooter>
-                  </Card>
-                </MagicCard>
-              </AnimationContainer>
-            ))}
-          </div>
+          {REVIEWS.map((review, index) => (
+            <AnimationContainer delay={0.2 * index} key={index}>
+              <MagicCard key={index} className="md:p-0">
+                <Card className="flex flex-col w-full border-none h-min">
+                  <CardHeader className="space-y-0">
+                    <CardTitle className="text-lg font-medium text-muted-foreground">
+                      {review.name}
+                    </CardTitle>
+                    <CardDescription>{review.username}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4 pb-4">
+                    <p className="text-muted-foreground">{review.review}</p>
+                  </CardContent>
+                  <CardFooter className="w-full space-x-1 mt-auto">
+                    {Array.from({ length: review.rating }, (_, i) => (
+                      <StarIcon
+                        key={i}
+                        className="w-4 h-4 fill-yellow-500 text-yellow-500"
+                      />
+                    ))}
+                  </CardFooter>
+                </Card>
+              </MagicCard>
+            </AnimationContainer>
+          ))}
         </div>
       </MaxWidthWrapper>
 
@@ -306,17 +234,17 @@ const HomePage = async () => {
           <LampContainer>
             <div className="flex flex-col items-center justify-center relative w-full text-center">
               <h2 className="bg-gradient-to-b from-neutral-200 to-neutral-400 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
-                Step into the future of link management
+                Automate the work that slows your Growth
               </h2>
               <p className="text-muted-foreground mt-6 max-w-md mx-auto">
-                Experience the cutting-edge solution that transforms how you
-                handle your links. Elevate your online presence with our
-                next-gen platform.
+                Ready to scale your business with AI? Let&apos;s map out your automation roadmap today.
               </p>
               <div className="mt-6">
-                <Button>
-                  Get started for free
-                  <ArrowRightIcon className="w-4 h-4 ml-2" />
+                <Button asChild>
+                    <Link href="/contact">
+                        Book a Strategy Call
+                        <ArrowRightIcon className="w-4 h-4 ml-2" />
+                    </Link>
                 </Button>
               </div>
             </div>
