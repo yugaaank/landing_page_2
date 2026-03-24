@@ -29,27 +29,16 @@ const HomePage = async () => {
       <MaxWidthWrapper>
         <div className="flex flex-col items-center justify-center w-full text-center">
           <AnimationContainer className="w-full flex flex-col items-center justify-center">
-            <div className="w-full max-w-5xl px-6 py-10 md:px-12 md:py-14 space-y-8">
-              <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_15%)_inset] transition-colors duration-200 mx-auto">
-                <span>
-                  <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(225,29,46,0.8)_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
+            <div className="w-full max-w-5xl px-6 py-10 md:px-12 md:py-14 space-y-6">
+              <h1 className="text-foreground text-center text-6xl font-bold tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl !leading-[1.1] w-full font-heading uppercase">
+                <span className="text-transparent bg-gradient-to-r from-brand-red to-brand-red-dark bg-clip-text">
+                  KATALYST
                 </span>
-                <span className="backdrop absolute inset-[1px] rounded-full bg-secondary transition-colors duration-200 group-hover:bg-secondary/80" />
-                <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-brand-red/20"></span>
-                <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
-                  ✨ Your Growth Starts Here
-                  <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-                </span>
-              </button>
-              <h1 className="text-foreground text-center text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
-                {SITE_CONFIG.title.split(" ").slice(0, 2).join(" ")}{" "}
-                <span className="text-transparent mx-2 bg-gradient-to-r from-brand-red to-brand-red-dark bg-clip-text inline-bloc">
-                  {SITE_CONFIG.title.split(" ").slice(2, 4).join(" ")}
-                </span>
-                {" "}
-                {SITE_CONFIG.title.split(" ").slice(4).join(" ")}
               </h1>
-              <p className="text-lg tracking-tight text-muted-foreground md:text-xl text-balance">
+              <h2 className="text-foreground text-center text-2xl font-medium tracking-normal text-balance sm:text-4xl md:text-5xl !leading-[1.15] w-full font-heading max-w-4xl mx-auto">
+                AI Automation and Marketing Infrastructure for Scalable Businesses
+              </h2>
+              <p className="text-base tracking-tight text-muted-foreground md:text-lg text-balance max-w-2xl mx-auto">
                 {SITE_CONFIG.description}
                 <br className="hidden md:block" />
                 <span className="hidden md:block">

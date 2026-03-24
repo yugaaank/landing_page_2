@@ -2,7 +2,7 @@ import { WaypointsIcon, BotIcon, ZapIcon, SettingsIcon, SearchCheckIcon, Workflo
 
 export const SITE_CONFIG = {
     name: "Katalyst",
-    title: "AI Automation and Marketing Infrastructure for Scalable Businesses",
+    title: "KATALYST AI Automation and Marketing Infrastructure for Scalable Businesses",
     description: "Build systems for measurable growth through AI chatbots, workflow automation, and high-performance ad campaigns.",
 };
 
