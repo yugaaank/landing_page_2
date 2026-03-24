@@ -78,8 +78,9 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        "heading": ["var(--font-aeonik)"],
-        "default": ["var(--font-inter)"],
+        "heading": ["var(--font-space-grotesk)"],
+        "default": ["var(--font-manrope)"],
+        "neue": ["var(--font-neue-montreal)"],
       },
       keyframes: {
         "accordion-down": {

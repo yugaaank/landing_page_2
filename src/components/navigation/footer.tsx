@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="flex flex-col items-start justify-start md:max-w-[200px]">
             <div className="flex items-start">
               <Icons.logo className="w-7 h-7" />
-              <span className="ml-2 font-bold text-xl">{SITE_CONFIG.name}</span>
+              <span className="ml-2 font-bold text-xl font-neue uppercase tracking-tighter">{SITE_CONFIG.name}</span>
             </div>
             <p className="text-muted-foreground mt-4 text-sm text-start">
               AI Automation and Marketing Infrastructure for Scalable Businesses.
