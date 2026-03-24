@@ -1,6 +1,7 @@
 import {
   AnimationContainer,
   MaxWidthWrapper,
+  ScrollScale,
 } from "@/components";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { BorderBeam } from "@/components/ui/border-beam";
@@ -71,25 +72,27 @@ const HomePage = async () => {
             className="relative mt-10 pt-20 pb-20 md:py-32 px-2 w-full"
           >
             <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
-            <MagicCard className="-m-2 lg:-m-4 overflow-visible p-2 md:p-4">
-              <BorderBeam size={250} duration={12} delay={9} />
-              <div className="w-full h-[400px] flex items-center justify-center bg-gradient-to-b from-card/80 via-card/60 to-card/30">
-                <div className="grid grid-cols-3 gap-8 text-center">
-                  <div>
-                    <p className="text-4xl md:text-6xl font-bold text-foreground">500+</p>
-                    <p className="text-sm text-muted-foreground uppercase">Automations Made</p>
+            <ScrollScale>
+                <MagicCard className="-m-2 lg:-m-4 overflow-visible p-2 md:p-4">
+                  <BorderBeam size={250} duration={12} delay={9} />
+                  <div className="w-full h-[400px] flex items-center justify-center bg-gradient-to-b from-[#010101]/80 via-[#010101]/60 to-[#010101]/30">
+                    <div className="grid grid-cols-3 gap-8 text-center">
+                      <div>
+                        <p className="text-4xl md:text-6xl font-bold text-foreground">500+</p>
+                        <p className="text-sm text-muted-foreground uppercase">Automations Made</p>
+                      </div>
+                      <div>
+                        <p className="text-4xl md:text-6xl font-bold text-foreground">10k+</p>
+                        <p className="text-sm text-muted-foreground uppercase">Hours Saved</p>
+                      </div>
+                      <div>
+                        <p className="text-4xl md:text-6xl font-bold text-foreground">1M+</p>
+                        <p className="text-sm text-muted-foreground uppercase">Views Generated</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-4xl md:text-6xl font-bold text-foreground">10k+</p>
-                    <p className="text-sm text-muted-foreground uppercase">Hours Saved</p>
-                  </div>
-                  <div>
-                    <p className="text-4xl md:text-6xl font-bold text-foreground">1M+</p>
-                    <p className="text-sm text-muted-foreground uppercase">Views Generated</p>
-                  </div>
-                </div>
-              </div>
-            </MagicCard>
+                </MagicCard>
+            </ScrollScale>
           </AnimationContainer>
         </div>
       </MaxWidthWrapper>
@@ -231,13 +234,14 @@ const HomePage = async () => {
         <AnimationContainer delay={0.1}>
           <LampContainer>
             <div className="flex flex-col items-center justify-center relative w-full text-center">
-              <h2 className="bg-gradient-to-b from-neutral-200 to-neutral-400 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full bg-[#010101]/60 blur-3xl -z-10 rounded-full" />
+              <h2 className="bg-gradient-to-b from-neutral-200 to-neutral-400 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8 relative z-10">
                 Automate the work that slows your Growth
               </h2>
-              <p className="text-muted-foreground mt-6 max-w-md mx-auto">
+              <p className="text-muted-foreground mt-6 max-w-md mx-auto relative z-10">
                 Ready to scale your business with AI? Let&apos;s map out your automation roadmap today.
               </p>
-              <div className="mt-6">
+              <div className="mt-6 relative z-10">
                 <Button asChild>
                     <Link href="/contact">
                         Book a Strategy Call
