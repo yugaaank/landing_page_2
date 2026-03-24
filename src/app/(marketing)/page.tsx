@@ -27,9 +27,9 @@ const HomePage = async () => {
       {/* Hero Section */}
       <MaxWidthWrapper>
         <div className="flex flex-col items-center justify-center w-full text-center">
-          <AnimationContainer className="w-full">
-            <MagicCard className="w-full max-w-5xl px-6 py-10 md:px-12 md:py-14 space-y-8">
-              <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_15%)_inset] transition-colors duration-200">
+          <AnimationContainer className="w-full flex flex-col items-center justify-center">
+            <div className="w-full max-w-5xl px-6 py-10 md:px-12 md:py-14 space-y-8">
+              <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_15%)_inset] transition-colors duration-200 mx-auto">
                 <span>
                   <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(225,29,46,0.8)_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
                 </span>
@@ -63,7 +63,7 @@ const HomePage = async () => {
                   </Link>
                 </Button>
               </div>
-            </MagicCard>
+            </div>
           </AnimationContainer>
 
           <AnimationContainer
