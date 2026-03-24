@@ -4,7 +4,6 @@ import {
 } from "@/components";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { BorderBeam } from "@/components/ui/border-beam";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -16,6 +15,7 @@ import {
 import { LampContainer } from "@/components/ui/lamp";
 import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
+import { Button } from "@/components/ui/button";
 import { SERVICES, PROCESS, COMPANIES, REVIEWS, SITE_CONFIG } from "@/lib/data";
 import { ArrowRightIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
@@ -28,12 +28,12 @@ const HomePage = async () => {
       <MaxWidthWrapper>
         <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
           <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
-            <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
+            <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_15%)_inset] transition-colors duration-200">
               <span>
-                <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
+                <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(225,29,46,0.8)_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
               </span>
-              <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-900" />
-              <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/20"></span>
+              <span className="backdrop absolute inset-[1px] rounded-full bg-secondary transition-colors duration-200 group-hover:bg-secondary/80" />
+              <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-brand-red/20"></span>
               <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
                 ✨ Your Growth Starts Here
                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
@@ -41,7 +41,7 @@ const HomePage = async () => {
             </button>
             <h1 className="text-foreground text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
               {SITE_CONFIG.title.split(" ").slice(0, 2).join(" ")}{" "}
-              <span className="text-transparent mx-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
+              <span className="text-transparent mx-2 bg-gradient-to-r from-brand-red to-brand-red-dark bg-clip-text inline-bloc">
                 {SITE_CONFIG.title.split(" ").slice(2, 4).join(" ")}
               </span>
               {" "}
@@ -69,27 +69,25 @@ const HomePage = async () => {
             className="relative pt-20 pb-20 md:py-32 px-2 bg-transparent w-full"
           >
             <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
-            <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
+            <MagicCard className="-m-2 lg:-m-4 overflow-visible p-2 md:p-4">
               <BorderBeam size={250} duration={12} delay={9} />
-              <div className="w-full h-[400px] bg-black flex items-center justify-center">
+              <div className="w-full h-[400px] flex items-center justify-center bg-gradient-to-b from-card/80 via-card/60 to-card/30">
                 <div className="grid grid-cols-3 gap-8 text-center">
-                    <div>
-                        <p className="text-4xl md:text-6xl font-bold text-foreground">500+</p>
-                        <p className="text-sm text-muted-foreground uppercase">Automations Made</p>
-                    </div>
-                    <div>
-                        <p className="text-4xl md:text-6xl font-bold text-foreground">10k+</p>
-                        <p className="text-sm text-muted-foreground uppercase">Hours Saved</p>
-                    </div>
-                    <div>
-                        <p className="text-4xl md:text-6xl font-bold text-foreground">1M+</p>
-                        <p className="text-sm text-muted-foreground uppercase">Views Generated</p>
-                    </div>
+                  <div>
+                    <p className="text-4xl md:text-6xl font-bold text-foreground">500+</p>
+                    <p className="text-sm text-muted-foreground uppercase">Automations Made</p>
+                  </div>
+                  <div>
+                    <p className="text-4xl md:text-6xl font-bold text-foreground">10k+</p>
+                    <p className="text-sm text-muted-foreground uppercase">Hours Saved</p>
+                  </div>
+                  <div>
+                    <p className="text-4xl md:text-6xl font-bold text-foreground">1M+</p>
+                    <p className="text-sm text-muted-foreground uppercase">Views Generated</p>
+                  </div>
                 </div>
               </div>
-              <div className="absolute -bottom-4 inset-x-0 w-full h-1/2 bg-gradient-to-t from-background z-40"></div>
-              <div className="absolute bottom-0 md:-bottom-8 inset-x-0 w-full h-1/4 bg-gradient-to-t from-background z-50"></div>
-            </div>
+            </MagicCard>
           </AnimationContainer>
         </div>
       </MaxWidthWrapper>

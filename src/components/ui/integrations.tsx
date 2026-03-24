@@ -11,7 +11,7 @@ const Circle = forwardRef<HTMLDivElement, { className?: string; children?: React
             <div
                 ref={ref}
                 className={cn(
-                    "z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+                    "z-10 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card p-3 shadow-sm",
                     className,
                 )}
             >
@@ -38,7 +38,7 @@ export function Integrations({
     return (
         <div
             className={cn(
-                "relative flex w-full max-w-[500px] items-center justify-center overflow-hidden rounded-lg border bg-background p-10 md:shadow-xl",
+                "relative flex w-full max-w-[500px] items-center justify-center overflow-hidden rounded-lg border border-border bg-secondary p-10 md:shadow-xl",
                 className,
             )}
             ref={containerRef}
@@ -46,7 +46,7 @@ export function Integrations({
             <div className="flex h-full w-full flex-row items-stretch justify-between gap-10">
                 <div className="flex flex-col justify-center">
                     <Circle ref={div7Ref}>
-                        <Icons.user className="text-black" />
+                        <Icons.user className="text-foreground" />
                     </Circle>
                 </div>
                 <div className="flex flex-col justify-center">

@@ -32,6 +32,13 @@ const config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        brand: {
+          red: {
+            DEFAULT: "#E11D2E",
+            dark: "#B11222",
+            light: "#FF3B4A",
+          }
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
