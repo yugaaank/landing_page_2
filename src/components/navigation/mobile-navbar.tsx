@@ -45,7 +45,7 @@ const MobileNavbar = () => {
           <div className="flex flex-col items-start w-full py-2 mt-10">
             <div className="flex items-center justify-evenly w-full space-x-2">
                 <Link
-                  href="/contact"
+                  href="https://calendly.com/kompanykatalyst/discovery-call"
                   className={buttonVariants({ className: "w-full" })}
                   onClick={handleClose}
                 >

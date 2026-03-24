@@ -94,7 +94,7 @@ const Footer = () => {
                   </li>
                   <li className="mt-2">
                     <Link
-                      href="/contact"
+                      href="https://calendly.com/kompanykatalyst/discovery-call"
                       className="hover:text-foreground transition-all duration-300"
                     >
                       Contact

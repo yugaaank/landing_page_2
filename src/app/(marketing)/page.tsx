@@ -49,7 +49,7 @@ const HomePage = async () => {
                 </p>
                 <div className="flex items-center justify-center whitespace-nowrap gap-4">
                   <Button asChild>
-                    <Link href={"/contact"} className="flex items-center">
+                    <Link href={"https://calendly.com/kompanykatalyst/discovery-call"} className="flex items-center">
                       Book a Strategy Call
                       <ArrowRightIcon className="w-4 h-4 ml-2" />
                     </Link>
@@ -60,7 +60,7 @@ const HomePage = async () => {
 
             <AnimationContainer
               delay={0.2}
-              className="relative mt-10 pt-20 pb-20 md:py-32 px-2 w-full"
+              className="relative mt-10 pb-10 px-2 w-full"
             >
               <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
               <ScrollScale>
@@ -89,16 +89,30 @@ const HomePage = async () => {
         </ScrollSection>
       </MaxWidthWrapper>
 
+      {/* Heading between Stats and Tech Stack */}
+      <MaxWidthWrapper className="py-0">
+        <ScrollSection>
+          <div className="flex flex-col items-center justify-center w-full text-center py-10">
+            <h2 className="text-4xl md:text-6xl font-bold font-heading text-foreground">
+              Powering the next generation of <br className="hidden md:block" />
+              <span className="text-transparent bg-gradient-to-r from-brand-red-dark to-brand-red-light bg-clip-text">
+                automated businesses
+              </span>
+            </h2>
+          </div>
+        </ScrollSection>
+      </MaxWidthWrapper>
+
       {/* Companies Section */}
       <MaxWidthWrapper>
         <ScrollSection>
           <AnimationContainer delay={0.4}>
-            <div className="py-14">
+            <div className="py-0">
               <div className="mx-auto px-4 md:px-8">
                 <h2 className="text-center text-sm font-medium font-heading text-neutral-400 uppercase">
                   Our Advanced Tech Stack
                 </h2>
-                <div className="mt-8">
+                <div className="mt-8 pb-14">
                   <ul className="flex flex-wrap items-center gap-x-6 gap-y-6 md:gap-x-16 justify-center">
                     {COMPANIES.map((company) => (
                       <li key={company.name} className="flex flex-col items-center">
@@ -243,7 +257,7 @@ const HomePage = async () => {
               </p>
               <div className="mt-6 relative z-10">
                 <Button asChild>
-                    <Link href="/contact">
+                    <Link href="https://calendly.com/kompanykatalyst/discovery-call">
                         Book a Strategy Call
                         <ArrowRightIcon className="w-4 h-4 ml-2" />
                     </Link>

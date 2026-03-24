@@ -74,7 +74,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center">
             <div className="flex items-center gap-x-4">
               <Link
-                href="/contact"
+                href="https://calendly.com/kompanykatalyst/discovery-call"
                 className={buttonVariants({ size: "sm" })}
               >
                 Book a Call
