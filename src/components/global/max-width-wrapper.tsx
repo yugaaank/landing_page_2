@@ -9,7 +9,7 @@ interface Props {
 const MaxWidthWrapper = ({ className, children }: Props) => {
     return (
         <section className={cn(
-            "surface-panel h-full mx-auto w-full max-w-full md:max-w-screen-xl px-4 md:px-12 lg:px-20 py-12 md:py-16 transition-all duration-300",
+            "h-full mx-auto w-full max-w-full md:max-w-screen-xl px-4 md:px-12 lg:px-20 py-12 md:py-16 transition-all duration-300",
             className,
         )}>
             {children}

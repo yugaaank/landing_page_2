@@ -26,47 +26,49 @@ const HomePage = async () => {
     <div className="overflow-x-hidden scrollbar-hide size-full">
       {/* Hero Section */}
       <MaxWidthWrapper>
-        <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
-          <AnimationContainer className="flex flex-col items-center justify-center w-full text-center">
-            <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_15%)_inset] transition-colors duration-200">
-              <span>
-                <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(225,29,46,0.8)_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-              </span>
-              <span className="backdrop absolute inset-[1px] rounded-full bg-secondary transition-colors duration-200 group-hover:bg-secondary/80" />
-              <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-brand-red/20"></span>
-              <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
-                ✨ Your Growth Starts Here
-                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-              </span>
-            </button>
-            <h1 className="text-foreground text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
-              {SITE_CONFIG.title.split(" ").slice(0, 2).join(" ")}{" "}
-              <span className="text-transparent mx-2 bg-gradient-to-r from-brand-red to-brand-red-dark bg-clip-text inline-bloc">
-                {SITE_CONFIG.title.split(" ").slice(2, 4).join(" ")}
-              </span>
-              {" "}
-              {SITE_CONFIG.title.split(" ").slice(4).join(" ")}
-            </h1>
-            <p className="mb-12 text-lg tracking-tight text-muted-foreground md:text-xl text-balance">
-              {SITE_CONFIG.description}
-              <br className="hidden md:block" />
-              <span className="hidden md:block">
-                Automate the work that slows your growth.
-              </span>
-            </p>
-            <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
-              <Button asChild>
-                <Link href={"/contact"} className="flex items-center">
-                  Book a Strategy Call
-                  <ArrowRightIcon className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-            </div>
+        <div className="flex flex-col items-center justify-center w-full text-center">
+          <AnimationContainer className="w-full">
+            <MagicCard className="w-full max-w-5xl px-6 py-10 md:px-12 md:py-14 space-y-8">
+              <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_15%)_inset] transition-colors duration-200">
+                <span>
+                  <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,rgba(225,29,46,0.8)_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
+                </span>
+                <span className="backdrop absolute inset-[1px] rounded-full bg-secondary transition-colors duration-200 group-hover:bg-secondary/80" />
+                <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-brand-red/20"></span>
+                <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
+                  ✨ Your Growth Starts Here
+                  <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+                </span>
+              </button>
+              <h1 className="text-foreground text-center text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
+                {SITE_CONFIG.title.split(" ").slice(0, 2).join(" ")}{" "}
+                <span className="text-transparent mx-2 bg-gradient-to-r from-brand-red to-brand-red-dark bg-clip-text inline-bloc">
+                  {SITE_CONFIG.title.split(" ").slice(2, 4).join(" ")}
+                </span>
+                {" "}
+                {SITE_CONFIG.title.split(" ").slice(4).join(" ")}
+              </h1>
+              <p className="text-lg tracking-tight text-muted-foreground md:text-xl text-balance">
+                {SITE_CONFIG.description}
+                <br className="hidden md:block" />
+                <span className="hidden md:block">
+                  Automate the work that slows your growth.
+                </span>
+              </p>
+              <div className="flex items-center justify-center whitespace-nowrap gap-4">
+                <Button asChild>
+                  <Link href={"/contact"} className="flex items-center">
+                    Book a Strategy Call
+                    <ArrowRightIcon className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+            </MagicCard>
           </AnimationContainer>
 
           <AnimationContainer
             delay={0.2}
-            className="relative pt-20 pb-20 md:py-32 px-2 bg-transparent w-full"
+            className="relative mt-10 pt-20 pb-20 md:py-32 px-2 w-full"
           >
             <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
             <MagicCard className="-m-2 lg:-m-4 overflow-visible p-2 md:p-4">
