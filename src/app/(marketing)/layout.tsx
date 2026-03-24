@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer } from "@/components";
+import { NeoMinimalFooter } from "@/components/ui/neo-minimal-footer";
 import { MarketingNavbar } from "@/components/navigation/marketing-navbar";
 
 interface Props {
@@ -13,7 +13,7 @@ const MarketingLayout = ({ children }: Props) => {
             <main className="mt-20 mx-auto w-full z-0 relative">
                 {children}
             </main>
-            <Footer />
+            <NeoMinimalFooter />
         </>
     );
 };

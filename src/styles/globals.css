@@ -131,3 +131,37 @@ html, body {
 .not-found {
   box-shadow: rgba(150, 18, 226, 0.3) 5px 5px;
 }
+
+/* Neo Minimal Footer Theme */
+@layer base {
+  :root {
+    --neo-foreground: oklch(0.141 0.005 285.823);
+    --neo-card: oklch(1 0 0);
+    --neo-card-foreground: oklch(0.141 0.005 285.823);
+    --neo-popover-foreground: oklch(0.141 0.005 285.823);
+    --neo-primary: oklch(0.21 0.006 285.885);
+    --neo-secondary: oklch(0.967 0.001 286.375);
+    --neo-secondary-foreground: oklch(0.21 0.006 285.885);
+    --neo-muted: oklch(0.967 0.001 286.375);
+    --neo-muted-foreground: oklch(0.552 0.016 285.938);
+    --neo-accent: oklch(0.967 0.001 286.375);
+    --neo-accent-foreground: oklch(0.21 0.006 285.885);
+    --neo-border: oklch(0.92 0.004 286.32);
+    --neo-input: oklch(0.92 0.004 286.32);
+    --neo-ring: oklch(0.705 0.015 286.067);
+  }
+
+  .dark {
+    --neo-background: oklch(0.141 0.005 285.823);
+    --neo-card: oklch(0.21 0.006 285.885);
+    --neo-popover: oklch(0.21 0.006 285.885);
+    --neo-primary: oklch(0.92 0.004 286.32);
+    --neo-primary-foreground: oklch(0.21 0.006 285.885);
+    --neo-secondary: oklch(0.274 0.006 286.033);
+    --neo-muted: oklch(0.274 0.006 286.033);
+    --neo-muted-foreground: oklch(0.705 0.015 286.067);
+    --neo-accent: oklch(0.274 0.006 286.033);
+    --neo-ring: oklch(0.552 0.016 285.938);
+    --neo-border: oklch(0.274 0.006 286.033);
+  }
+}

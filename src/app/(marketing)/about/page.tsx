@@ -31,10 +31,10 @@ const AboutPage = () => {
             <AnimationContainer delay={0.3}>
                 <h2 className="text-2xl font-bold font-heading">Our Approach</h2>
                 <p className="mt-4 text-muted-foreground">
-                    We don't just "install" tools. We map out your entire system architecture. Through our three-step process—Audit, Automate, and Scale—we identify bottlenecks and build bespoke solutions that integrate seamlessly with your existing stack.
+                    We don&apos;t just &quot;install&quot; tools. We map out your entire system architecture. Through our three-step process—Audit, Automate, and Scale—we identify bottlenecks and build bespoke solutions that integrate seamlessly with your existing stack.
                 </p>
                 <p className="mt-4 text-muted-foreground">
-                    Whether it's deploying AI Call Bots or building complex cross-platform workflows, our solutions are designed for measurable results.
+                    Whether it&apos;s deploying AI Call Bots or building complex cross-platform workflows, our solutions are designed for measurable results.
                 </p>
             </AnimationContainer>
         </div>

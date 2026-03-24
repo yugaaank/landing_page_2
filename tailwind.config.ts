@@ -28,6 +28,13 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        neo: {
+          foreground: "var(--neo-foreground)",
+          card: "var(--neo-card)",
+          border: "var(--neo-border)",
+          muted: "var(--neo-muted)",
+          "muted-foreground": "var(--neo-muted-foreground)",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
