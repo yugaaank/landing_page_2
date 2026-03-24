@@ -50,7 +50,7 @@ const MagicCard = ({ children, className }: Props) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className={cn(
-                "relative w-full max-w-full overflow-hidden rounded-2xl border border-border bg-card/50 p-4 md:p-6 ring-1 ring-inset ring-foreground/20 bg-opacity-70 backdrop-blur-3xl shadow-none transition-all duration-300",
+                "relative w-full max-w-full overflow-hidden rounded-2xl border border-border bg-[#010101]/80 p-4 md:p-6 ring-1 ring-inset ring-foreground/20 backdrop-blur-3xl shadow-none transition-all duration-300",
                 className
             )}
         >

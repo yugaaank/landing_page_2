@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./car
 import { Input } from "./input";
 import { Integrations } from "./integrations";
 import { Label } from "./label";
+import MagicCard from "./magic-card";
 
 export const CARDS = [
     {
@@ -126,11 +127,10 @@ const BentoCard = ({
     href: string;
     cta: string;
 }) => (
-    <div
+    <MagicCard
         key={name}
         className={cn(
-            "group relative col-span-3 flex flex-col justify-between border border-border overflow-hidden rounded-xl",
-            "bg-card [box-shadow:0_-20px_80px_-20px_rgba(225,29,46,0.1)_inset]",
+            "group relative col-span-3 flex flex-col justify-between border border-border overflow-hidden rounded-xl !p-0",
             className,
         )}
     >
@@ -154,7 +154,7 @@ const BentoCard = ({
             </Link>
         </div>
         <div className="pointer-events-none absolute inset-0 transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />
-    </div>
+    </MagicCard>
 );
 
 export { BentoCard, BentoGrid };
