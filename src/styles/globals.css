@@ -79,6 +79,13 @@
 
 html, body {
   font-family: "Inter", sans-serif !important;
+  min-height: 100%;
+  background-color: transparent;
+  background-image: none;
+  background-attachment: initial;
+  color: hsl(var(--foreground));
+  position: relative;
+  overflow-x: hidden;
 }
 
 .dumy {
@@ -119,6 +126,16 @@ html, body {
 
 .hero-gradient {
   background: linear-gradient(135deg, #0A0A0B 0%, #111113 60%, #1A1A1D 100%);
+}
+
+.surface-panel {
+  background: linear-gradient(180deg, rgba(8, 8, 8, 0.85), rgba(10, 10, 11, 0.75));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65);
+  border-radius: 24px;
+  backdrop-filter: blur(28px);
+  position: relative;
+  overflow: hidden;
 }
 
 .not-found {
