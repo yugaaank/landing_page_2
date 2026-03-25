@@ -1,0 +1,111 @@
+/* src/styles/hero-title.css */
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.glass-text-effect {
+  /* Using Tailwind responsive classes in the TSX for font size, but setting base styles here */
+  letter-spacing: -0.04em;
+  
+  /* Core text clipping for gradient and background */
+  background: linear-gradient(
+    135deg,
+    rgba(177, 18, 34, 0.9) 0%,   /* dark red */
+    rgba(0, 0, 0, 0.8) 50%,      /* black */
+    rgba(177, 18, 34, 0.9) 100%  /* dark red */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  transform: translateZ(0);
+  
+  /* Reactive text shadow based on mouse parsing via pseudo-elements */
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
+}
+
+/* Base frosted layer simulating light refraction and edge highlights */
+.glass-text-effect::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  
+  /* Text outline / bright edge */
+  -webkit-text-stroke: 1px rgba(177, 18, 34, 0.5);
+  -webkit-text-fill-color: transparent;
+  
+  /* Interactive glow passing through */
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(225, 29, 46, 0.2) 0%,
+    rgba(225, 29, 46, 0) 50%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  
+  transform: translateZ(-1px);
+}
+
+/* Secondary edge shimmer highlight */
+.glass-text-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes shine-sweep {
+  0%, 15% {
+    background-position: 200% 50%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  85%, 100% {
+    background-position: -100% 50%;
+    opacity: 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 6s ease-in-out infinite;
+}

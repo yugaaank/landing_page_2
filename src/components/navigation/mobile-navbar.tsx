@@ -56,7 +56,7 @@ const MobileNavbar = () => {
                 {NAV_LINKS.map((link) => (
                     <Link
                         key={link.title}
-                        href={link.href}
+                        href={link.href || "/"}
                         onClick={handleClose}
                         className="flex items-center w-full py-4 font-medium text-muted-foreground hover:text-foreground border-b border-border last:border-none"
                     >

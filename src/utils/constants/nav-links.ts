@@ -1,4 +1,17 @@
-export const NAV_LINKS = [
+import { LucideIcon } from "lucide-react";
+
+export type NavLink = {
+    title: string;
+    href?: string;
+    menu?: {
+        title: string;
+        href: string;
+        tagline: string;
+        icon: LucideIcon | any;
+    }[];
+};
+
+export const NAV_LINKS: NavLink[] = [
     {
         title: "Home",
         href: "/",

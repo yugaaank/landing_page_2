@@ -22,6 +22,7 @@ import { SERVICES, PROCESS, COMPANIES, REVIEWS, SITE_CONFIG } from "@/lib/data";
 import { ArrowRightIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { HeroTitle } from "@/components/ui/hero-title";
 
 const HomePage = async () => {
   return (
@@ -32,11 +33,7 @@ const HomePage = async () => {
           <div className="flex flex-col items-center justify-center w-full text-center">
             <AnimationContainer className="w-full flex flex-col items-center justify-center">
               <div className="w-full max-w-5xl px-6 py-10 md:px-12 md:py-14 space-y-6">
-                <h1 className="text-foreground text-center text-6xl font-bold tracking-tighter sm:text-7xl md:text-8xl lg:text-9xl !leading-[1.1] w-full font-heading uppercase">
-                  <span className="text-transparent bg-gradient-to-r from-brand-red-dark to-brand-red-light bg-clip-text drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)] [filter:drop-shadow(0_10px_20px_rgba(0,0,0,0.8))_drop-shadow(0_-1px_1px_rgba(255,255,255,0.2))] font-neue">
-                    KATALYST
-                  </span>
-                </h1>
+                <HeroTitle text="KATALYST" />
                 <h2 className="text-foreground text-center text-2xl font-medium tracking-normal text-balance sm:text-4xl md:text-5xl !leading-[1.15] w-full font-heading max-w-4xl mx-auto">
                   AI Automation and Marketing Infrastructure for Scalable Businesses
                 </h2>
@@ -62,11 +59,16 @@ const HomePage = async () => {
               delay={0.2}
               className="relative mt-10 pb-10 px-2 w-full"
             >
-              <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
+              {/* Subtle top-anchored red aura behind the box */}
+              <div className="absolute -top-[30%] left-1/2 -translate-x-1/2 w-[100%] h-[60%] bg-[radial-gradient(ellipse_at_bottom_center,rgba(225,29,46,0.3)_0%,transparent_60%)] -z-10 pointer-events-none"></div>
+              
               <ScrollScale>
-                  <MagicCard className="-m-2 lg:-m-4 overflow-visible p-2 md:p-4">
-                    <BorderBeam size={250} duration={12} delay={9} />
-                    <div className="w-full h-[400px] flex items-center justify-center bg-gradient-to-b from-[#010101]/80 via-[#010101]/60 to-[#010101]/30">
+                  <div className="relative w-full rounded-2xl md:rounded-3xl border border-white/[0.05] border-t-0 bg-[#0A0A0B] shadow-2xl p-2 md:p-4 lg:p-6 mb-10 overflow-visible mt-8 md:mt-16">
+                     {/* Clean, subtle top edge highlight */}
+                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-[1px] bg-gradient-to-r from-transparent via-brand-red-DEFAULT to-transparent"></div>
+
+                     <div className="relative w-full h-[400px] z-10 flex items-center justify-center bg-gradient-to-b from-white/[0.02] to-transparent rounded-xl overflow-hidden border border-white/[0.05]">
+                       <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-brand-red-dark/10 to-transparent pointer-events-none"></div>
                       <div className="grid grid-cols-3 gap-8 text-center">
                         <div>
                           <p className="text-4xl md:text-6xl font-bold text-foreground">500+</p>
@@ -82,7 +84,7 @@ const HomePage = async () => {
                         </div>
                       </div>
                     </div>
-                  </MagicCard>
+                  </div>
               </ScrollScale>
             </AnimationContainer>
           </div>
